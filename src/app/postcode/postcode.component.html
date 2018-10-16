@@ -1,0 +1,21 @@
+<p>
+  postcode works!
+</p>
+<div>
+  <ul>
+    <li *ngFor="let postcode of postcodes">
+      Id {{postcode.id}} heeft postcode {{postcode.pstcod}}. Deze postcode betreft {{postcode.str}} in {{postcode.wpl}}
+      <button (click)="remove(postcode.id)">Verwijderen</button>
+      <button (click)="update(postcode.id)">Wijzigen</button>
+
+    </li>
+  </ul>
+</div>
+
+<div>
+  <p>Toevoegen nieuwe postcode:</p>
+  <p><label>Postcode: <input [(ngModel)]="postcode.pstcod" type="text" placeholder="0000XX"></label></p>
+  <p><label>Straatnaam: <input [(ngModel)]="postcode.str" type="text" placeholder="straatnaam"></label></p>
+  <p><label>Woonplaats: <input [(ngModel)]="postcode.wpl" type="text" placeholder="woonplaats"></label></p>
+  <p><button (click)="store($event)">toevoegen!!!!</button></p>
+</div>
